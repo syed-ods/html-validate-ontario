@@ -1,9 +1,9 @@
 {
-    "name": "@ontario-digital-service/html-validate-ontario",
+    "name": "@ontario-digital-service/validate-config-ontario",
     "version": "1.0.1",
     "description": "HTML-validate configuration for Ontario Frontend projects",
     "keywords": [
-        "HTML-validate",
+        "html-validate",
         "validate",
         "config",
         "ontario",

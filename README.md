@@ -4,13 +4,15 @@ This package provides the [html-validate](https://html-validate.org) configurati
 
 ## Rules & Exceptions
 
-- **Void Style**: the linter will not enforce any particular style for void elements such as `<img>`, `<br>`, `<input>`, etc.
+- **Void Style**: the linter will not enforce any particular style for void elements such as `img`, `br`, `input`, etc.
 
 - **Prefer Button**: allowing the use of `<input type="button">`.
 
 - **SVG Focusable**: not checking svg elements for the `focusable` attribute.
 
 - **Trailing Whitespace**: allowing the output html in `dist` folder to have whitespaces, that could occur due to the merging of several templates into HTML.
+
+- **Long Title**: allowing the `title` tags to be long.
 
 ## Installation
 
@@ -24,16 +26,16 @@ To integrate the Ontario html-validate configuration into your project, choose o
 npm install html-validate --save-dev
 ```
 
-2. Next, install the `@ontario-digital-service/html-validate-ontario` package:
+2. Next, install the `@ontario-digital-service/validate-config-ontario` package:
 
 ```sh
-npm install @ontario-digital-service/html-validate-ontario --save-dev
+npm install @ontario-digital-service/validate-config-ontario --save-dev
 ```
 
 ### YARN
 
 ```sh
-yarn add @ontario-digital-service/html-validate-ontario --dev
+yarn add @ontario-digital-service/validate-config-ontario --dev
 ```
 
 ## Usage
@@ -42,22 +44,29 @@ yarn add @ontario-digital-service/html-validate-ontario --dev
 
 Run the following:
 
-```json
-"html-validate-ontario"
+```sh
+npm run validate
 ```
 
 ### Customizing Configuration
 
-For projects that require customization beyond the base configuration, you can extend and override specific settings. Create a `.htmlvalidate.js` file in your project's root directory, import the Ontario configuration, and then add your modifications:
+For projects that require customization beyond the base configuration, you can extend and override specific settings. Create a `.htmlvalidate.json` file in your project's root directory, and to the `"rules"` object:
 
-```javascript
-module.exports = {
-  ...require('@ontario-digital-service/html-validate-ontario')
-  };
+```json
+{
+    "extends": [
+        "html-validate:recommended"
+    ],
+    "rules": {
+        "void-style": "off",
+        "prefer-button": "off",
+        "svg-focusable": "off",
+        "no-trailing-whitespace": "off",
+        "long-title": "off"
+    }
+}
 ```
-
-This approach allows you to maintain the foundational style guide while tweaking aspects that are project-specific or according to your team's preferences.
 
 ## Contributing
 
-We welcome contributions to improve the prettier-config-ontario package. Please feel free to submit a pull request or open an issue on our [GitHub repository](https://github.com/syed-ods/html-validate-ontario).
+We welcome contributions to improve the HTML validate-config-ontario package. Please feel free to submit a pull request or open an issue on our [GitHub repository](https://github.com/syed-ods/validate-config-ontario)
