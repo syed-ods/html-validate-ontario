@@ -50,7 +50,7 @@ npm run validate
 
 ### Customizing Configuration
 
-For projects that require customization beyond the base configuration, you can extend and override specific settings. Create a `.htmlvalidate.json` file in your project's root directory, and to the `"rules"` object:
+For projects that require customization beyond the base configuration, you can extend and override specific settings. Create a `.htmlvalidate.json` file in your project's root directory, and add options to the `"rules"` object:
 
 ```json
 {
